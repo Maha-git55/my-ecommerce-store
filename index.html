@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <title>Eaternity - Food Delivery</title>
+</head>
+<body class="dark:bg-gray-800 dark:text-white transition-colors duration-300">
+    <!-- Navbar sec -->
+    <div class="navbar justify-between items-center flex bg-blue-100 dark:bg-gray-900 px-4 py-2">
+        <!-- Logo  -->
+        <h1 class="text-2xl text-black dark:text-white font-bold flex items-center"> 
+            <i class="fa-solid fa-infinity ml-2 font-bold text-5xl text-orange-900 dark:text-orange-400"></i>
+            <span class="ml-2">eaternity</span>
+        </h1>
+        
+        <!--Nav options -->
+        <div class="hidden md:flex gap-8 lg:gap-12 font-bold">
+            <a class="hover:text-orange-600 dark:hover:text-orange-400">Home</a>
+            <a class="hover:text-orange-600 dark:hover:text-orange-400">About</a>
+            <a class="hover:text-orange-600 dark:hover:text-orange-400">Contacts</a>
+            <a class="hover:text-orange-600 dark:hover:text-orange-400">Categories <i class="fa-solid fa-caret-down"></i></a>
+        </div>
+        
+        <!-- Dark Mode Toggle -->
+        <div class="flex items-center gap-4">
+            <div class="flex items-center bg-pink-200 dark:bg-gray-700 rounded-full p-1 cursor-pointer" id="themeToggle">
+                <i class="fa-solid fa-moon p-1 text-gray-700 dark:text-yellow-300" id="darkIcon"></i>
+                <i class="fa-solid fa-sun p-1 text-yellow-500 dark:hidden" id="lightIcon"></i>
+                <div class="w-6 h-6 rounded-full bg-gray-800 dark:bg-white absolute transform transition-transform duration-300" id="toggleCircle"></div>
+            </div>
+            
+            <!-- My account button -->
+            <button class="bg-green-400 hover:bg-green-500 text-white py-1 px-3 rounded hidden sm:block">
+                <i class="fa-solid fa-user"></i>
+                My Account
+            </button>
+            
+            <!-- Mobile menu button -->
+            <button class="md:hidden text-2xl" id="mobileMenuButton">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </div>
+    
+    <!-- Mobile Menu (hidden by default) -->
+    <div class="md:hidden bg-blue-100 dark:bg-gray-900 hidden" id="mobileMenu">
+        <div class="flex flex-col px-4 py-2">
+            <a class="py-2 hover:text-orange-600 dark:hover:text-orange-400">Home</a>
+            <a class="py-2 hover:text-orange-600 dark:hover:text-orange-400">About</a>
+            <a class="py-2 hover:text-orange-600 dark:hover:text-orange-400">Contacts</a>
+            <a class="py-2 hover:text-orange-600 dark:hover:text-orange-400">Categories <i class="fa-solid fa-caret-down"></i></a>
+            <button class="bg-green-400 hover:bg-green-500 text-white py-2 px-3 rounded my-2 w-full">
+                <i class="fa-solid fa-user"></i>
+                My Account
+            </button>
+        </div>
+    </div>
+
+    <!-- Hero section -->
+    <div class="bg-gradient-to-br from-orange-50 via-pink-100 to-transparent dark:from-gray-700 dark:via-gray-600 dark:to-transparent">
+        <div class="container mx-auto px-4 py-8 md:py-12 lg:py-16">
+            <div class="flex flex-col md:flex-row items-center">
+                <!-- Text content -->
+                <div class="md:w-1/2 md:pr-8 mb-8 md:mb-0">
+                    <h1 class="text-5xl text-blue-700 dark:text-blue-400 font-bold mb-2">
+                        Rice<span class="text-black dark:text-white font-medium text-2xl"> bowl</span>
+                    </h1>
+                    <p class="text-gray-700 dark:text-gray-300 text-lg mb-4">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus assumenda quasi iusto cumque velit nemo.
+                    </p>
+                    <div class="flex items-center">
+                        <span class="text-green-500 dark:text-green-400 font-bold">Delivery</span>
+                        <span class="ml-2">in</span>
+                        <h3 class="ml-2 font-semibold">Miami</h3>
+                    </div>
+                </div>
+                
+                <!-- Image -->
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="https://th.bing.com/th/id/OIP.xa1m4_OtJyZZqMfue2Q63gHaFj?w=198&h=148&c=7&r=0&o=5&dpr=1.5&pid=1.7" 
+                         alt="Rice bowl" 
+                         class="rounded-lg shadow-lg w-full max-w-md object-cover">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Best Recipe For You section -->
+    <div class="font-bold bg-purple-200 dark:bg-purple-900 text-center py-4 my-4">
+        <h2 class="text-2xl">Best Recipe For You</h2>
+    </div>
+    
+    <!-- Recipes grid -->
+    <div class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Recipe cards (6 items) -->
+            <div class="bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden">
+                <img src="https://th.bing.com/th/id/OIP.qcfRx-RRlU70FS7Hyyo0BwHaE8?w=198&h=132&c=7&r=0&o=5&dpr=1.5&pid=1.7" 
+                     alt="Espresso" 
+                     class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h2 class="text-2xl font-medium text-gray-900 dark:text-white mb-2">Espresso</h2>
+                    <p class="text-gray-500 dark:text-gray-300">Williamsburg occupy sustainable snackwave gochujang. Pinterest cornhole brunch, slow-carb neutra irony.</p>
+                </div>
+            </div>
+            
+            <!-- Repeat 5 more times (you can replace with actual different recipes) -->
+            <div class="bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden">
+                <img src="https://th.bing.com/th/id/OIP.qcfRx-RRlU70FS7Hyyo0BwHaE8?w=198&h=132&c=7&r=0&o=5&dpr=1.5&pid=1.7" 
+                     alt="Espresso" 
+                     class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h2 class="text-2xl font-medium text-gray-900 dark:text-white mb-2">Espresso</h2>
+                    <p class="text-gray-500 dark:text-gray-300">Williamsburg occupy sustainable snackwave gochujang. Pinterest cornhole brunch, slow-carb neutra irony.</p>
+                </div>
+            </div>
+            
+            <div class="bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden">
+                <img src="https://th.bing.com/th/id/OIP.qcfRx-RRlU70FS7Hyyo0BwHaE8?w=198&h=132&c=7&r=0&o=5&dpr=1.5&pid=1.7" 
+                     alt="Espresso" 
+                     class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h2 class="text-2xl font-medium text-gray-900 dark:text-white mb-2">Espresso</h2>
+                    <p class="text-gray-500 dark:text-gray-300">Williamsburg occupy sustainable snackwave gochujang. Pinterest cornhole brunch, slow-carb neutra irony.</p>
+                </div>
+            </div>
+            
+            <div class="bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden">
+                <img src="https://th.bing.com/th/id/OIP.qcfRx-RRlU70FS7Hyyo0BwHaE8?w=198&h=132&c=7&r=0&o=5&dpr=1.5&pid=1.7" 
+                     alt="Espresso" 
+                     class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h2 class="text-2xl font-medium text-gray-900 dark:text-white mb-2">Espresso</h2>
+                    <p class="text-gray-500 dark:text-gray-300">Williamsburg occupy sustainable snackwave gochujang. Pinterest cornhole brunch, slow-carb neutra irony.</p>
+                </div>
+            </div>
+            
+            <div class="bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden">
+                <img src="https://th.bing.com/th/id/OIP.qcfRx-RRlU70FS7Hyyo0BwHaE8?w=198&h=132&c=7&r=0&o=5&dpr=1.5&pid=1.7" 
+                     alt="Espresso" 
+                     class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h2 class="text-2xl font-medium text-gray-900 dark:text-white mb-2">Espresso</h2>
+                    <p class="text-gray-500 dark:text-gray-300">Williamsburg occupy sustainable snackwave gochujang. Pinterest cornhole brunch, slow-carb neutra irony.</p>
+                </div>
+            </div>
+            
+            <div class="bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden">
+                <img src="https://th.bing.com/th/id/OIP.qcfRx-RRlU70FS7Hyyo0BwHaE8?w=198&h=132&c=7&r=0&o=5&dpr=1.5&pid=1.7" 
+                     alt="Espresso" 
+                     class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h2 class="text-2xl font-medium text-gray-900 dark:text-white mb-2">Espresso</h2>
+                    <p class="text-gray-500 dark:text-gray-300">Williamsburg occupy sustainable snackwave gochujang. Pinterest cornhole brunch, slow-carb neutra irony.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <hr class="border-gray-300 dark:border-gray-600">
+    
+    <!-- Footer section -->
+    <footer class="bg-white dark:bg-gray-900 py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Eaternity info -->
+                <div>
+                    <div class="flex items-center">
+                        <i class="fa-solid fa-infinity text-yellow-400 text-5xl"></i>
+                        <h1 class="text-2xl text-black dark:text-white font-bold ml-2">eaternity</h1>
+                    </div>
+                    <p class="text-gray-500 dark:text-gray-400 mt-3">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto, expedita.
+                    </p>
+                    <p class="text-gray-500 dark:text-gray-400">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto, expedita.
+                    </p>
+                    <button class="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-4 py-2 mt-3">
+                        View Our Menu
+                    </button>
+                </div>
+                
+                <!-- Lists -->
+                <div class="md:col-span-2 flex flex-col sm:flex-row gap-8 lg:gap-16">
+                    <div>
+                        <h3 class="text-black dark:text-white font-bold text-xl mb-4">Important Lists</h3>
+                        <ul class="space-y-2">
+                            <li><a class="text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400">Home</a></li>
+                            <li><a class="text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400">About</a></li>
+                            <li><a class="text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400">Contacts</a></li>
+                            <li><a class="text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400">Blog</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-black dark:text-white font-bold text-xl mb-4">Quick Links</h3>
+                        <ul class="space-y-2">
+                            <li><a class="text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400">Home</a></li>
+                            <li><a class="text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400">About</a></li>
+                            <li><a class="text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400">Contacts</a></li>
+                            <li><a class="text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400">Blog</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Address -->
+                <div>
+                    <h3 class="text-black dark:text-white font-bold text-xl mb-4">Address</h3>
+                    <ul class="text-gray-600 dark:text-gray-400 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-2"></i>
+                            +123-456-7890
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-2"></i>
+                            Example@Gmail.Com
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            Mumbai, India
+                        </li>
+                    </ul>
+                    
+                    <div class="flex space-x-4 mt-4 text-xl">
+                        <a class="text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a class="text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                        <a class="text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Thank you message -->
+    <div class="bg-pink-500 dark:bg-pink-800 text-white text-center py-4">
+        <p class="text-2xl font-bold">Thank You For Your Attention</p>
+    </div>
+    
+    <script>
+        // Dark/Light mode toggle functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const darkIcon = document.getElementById('darkIcon');
+        const lightIcon = document.getElementById('lightIcon');
+        const toggleCircle = document.getElementById('toggleCircle');
+        
+        // Check for saved user preference or use system preference
+        if (localStorage.getItem('color-theme') === 'dark' || 
+            (!localStorage.getItem('color-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            toggleCircle.style.transform = 'translateX(100%)';
+            darkIcon.classList.add('hidden');
+            lightIcon.classList.remove('hidden');
+        } else {
+            document.documentElement.classList.remove('dark');
+            toggleCircle.style.transform = 'translateX(0)';
+            darkIcon.classList.remove('hidden');
+            lightIcon.classList.add('hidden');
+        }
+        
+        themeToggle.addEventListener('click', function() {
+            // Toggle icons
+            darkIcon.classList.toggle('hidden');
+            lightIcon.classList.toggle('hidden');
+            
+            // Toggle circle position
+            if (document.documentElement.classList.contains('dark')) {
+                toggleCircle.style.transform = 'translateX(0)';
+                localStorage.setItem('color-theme', 'light');
+            } else {
+                toggleCircle.style.transform = 'translateX(100%)';
+                localStorage.setItem('color-theme', 'dark');
+            }
+            
+            // Toggle dark class
+            document.documentElement.classList.toggle('dark');
+        });
+        
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuButton.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
